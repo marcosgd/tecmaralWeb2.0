@@ -1,0 +1,10 @@
+Options +Indexes
+RemoveHandler .html
+RemoveType .html
+AddHandler application/x-httpd-php .php
+AddType text/html .html application/x-httpd-php .php
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ senedmail.php [QSA,L]
